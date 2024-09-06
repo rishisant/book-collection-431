@@ -31,7 +31,7 @@
             <td><%= book.title %></td>
             <td><%= book.author %></td>
             <td><%= book.price %></td>
-            <td><%= book.published_date %></td>
+            <td><%= book.published_date.strftime("%Y-%m-%d") %></td>
             <td><%= link_to 'Show', book %></td>
             <td><%= link_to 'Edit', edit_book_path(book) %></td>
             <td><%= button_to "Delete", book, method: :delete, data: { turbo_confirm: 'Are you absolutely sure about deleting this precious book?' } %></td>
