@@ -1,0 +1,47 @@
+<%= stylesheet_link_tag 'books' %>
+
+<div class="books_header">
+    <h1>Edit Book</h1>
+</div>
+
+<div class="button_main_bar">
+    <div class="button_nav">
+        <%= link_to 'Back', books_path %>
+    </div>
+</div>
+
+<div class="edit_book">
+    <h2>Enter Book Details</h2>
+    <%= form_with(model: @book, local:true) do |form| %>
+        <div class="field">
+            <%= form.label :title %><br>
+            <%= form.text_field :title %>
+        </div>
+
+        <div class="field">
+            <%= form.label :author %><br>
+            <%= form.text_field :author %>
+        </div>
+
+        <div class="field">
+            <%= form.label :price %><br>
+            <%= form.text_field :price %>
+        </div>
+
+        <div class="field">
+            <%= form.label :published %><br>
+            <%= form.date_field :published %>
+        </div>
+
+        <div class="actions">
+            <%= form.submit %>
+        </div>
+
+        <ul>
+            <% @book.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+        </ul>
+
+    <% end %>
+</div>

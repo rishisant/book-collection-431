@@ -1,0 +1,19 @@
+<%= stylesheet_link_tag 'books' %>
+
+<div class="books_header">
+    <h1>Book Details</h1>
+</div>
+
+<div class="button_main_bar">
+    <div class="button_nav">
+        <%= link_to 'Back', books_path %>
+    </div>
+</div>
+
+<div class="book_details">
+    <h2>Selected Book</h2>
+    <span class="book_title"><%= @book.title %></span>
+    <span class="book_title"><%= @book.author %></span>
+    <span class="book_title"><%= @book.price %></span>
+    <span class="book_title"><%= @book.published %></span>
+</div>

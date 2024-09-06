@@ -1,0 +1,29 @@
+# Desroy Book Page
+<%= stylesheet_link_tag 'books' %>
+
+<div class="books_header">
+  <h1>Delete Book</h1>
+</div>
+
+<div class="button_main_bar">
+    <div class="button_nav">
+        <%= link_to 'Back', books_path %>
+    </div>
+</div>
+
+<div class="delete_book">
+    <h2>Are you sure you want to delete this book?</h2>
+    <h2><%= @book.title %></h2>
+    <%= form_with(model: @book, local: true) do |form| %>
+        <div class="actions">
+            <%= form.submit 'Delete' %>
+        </div>
+    <% end %>
+</div>
+
+<ul>
+    <% @book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+    <% end %>
+</ul>
+</div>
