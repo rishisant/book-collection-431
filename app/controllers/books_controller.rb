@@ -47,7 +47,7 @@ class BooksController < ApplicationController
             :title,
             :author,
             :price,
-            :published
+            :published_date
         )
     end
     end
